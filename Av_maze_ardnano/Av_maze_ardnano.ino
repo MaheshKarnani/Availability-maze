@@ -31,9 +31,9 @@ void setup() {
   pixels3.begin();
   Serial.begin(9600);
 
-  water=3;
-  food=3;
-  social=3;
+  water=2;
+  food=2;
+  social=2;
   
 }
 
@@ -56,20 +56,20 @@ void lights()
 {
   //light switches
   
-  if (water==1)
+  if (water==0)
   {
     pixels1.clear();
     pixels1.show();
   }
   
 
-  if (water==2)
+  if (water==1)
   {
-    pixels1.setPixelColor(4, pixels1.Color(0, 0, 20));
+    pixels1.setPixelColor(4, pixels1.Color(0, 0, 5));
     pixels1.show();
   }
   
-  if (water==3)
+  if (water==2)
   {
     pixels1.clear();
     pixels1.setPixelColor(0, pixels1.Color(0, 0, 1));
@@ -81,26 +81,26 @@ void lights()
     pixels1.clear();
     pixels1.setPixelColor(1, pixels1.Color(0, 0, 1));
     pixels1.setPixelColor(3, pixels1.Color(0, 0, 1));
-    pixels1.setPixelColor(5, pixels1.Color(0, 0, 5));
+    pixels1.setPixelColor(5, pixels1.Color(0, 0, 1));
     pixels1.setPixelColor(7, pixels1.Color(0, 0, 1));
     pixels1.show();
     delay(DELAYVAL);
   }
 
-  if (food==1)
+  if (food==0)
   {
     pixels2.clear();
     pixels2.show();
   }
   
 
-  if (food==2)
+  if (food==1)
   {
-    pixels2.setPixelColor(4, pixels2.Color(0, 0, 20));
+    pixels2.setPixelColor(4, pixels2.Color(0, 0, 5));
     pixels2.show();
   }
   
-  if (food==3)
+  if (food==2)
   {
     pixels2.clear();
     pixels2.setPixelColor(0, pixels2.Color(0, 0, 1));
@@ -112,26 +112,26 @@ void lights()
     pixels2.clear();
     pixels2.setPixelColor(1, pixels2.Color(0, 0, 1));
     pixels2.setPixelColor(3, pixels2.Color(0, 0, 1));
-    pixels2.setPixelColor(5, pixels2.Color(0, 0, 5));
+    pixels2.setPixelColor(5, pixels2.Color(0, 0, 1));
     pixels2.setPixelColor(7, pixels2.Color(0, 0, 1));
     pixels2.show();
     delay(DELAYVAL);
   }
 
 
-    if (social==1)
+    if (social==0)
   {
     pixels3.clear();
     pixels3.show();
   }
   
-  if (social==2)
+  if (social==1)
   {
-    pixels3.setPixelColor(4, pixels3.Color(0, 0, 20));
+    pixels3.setPixelColor(4, pixels3.Color(0, 0, 5));
     pixels3.show();
   }
   
-  if (social==3)
+  if (social==2)
   {
     pixels3.clear();
     pixels3.setPixelColor(0, pixels3.Color(0, 0, 1));
@@ -143,7 +143,7 @@ void lights()
     pixels3.clear();
     pixels3.setPixelColor(1, pixels3.Color(0, 0, 1));
     pixels3.setPixelColor(3, pixels3.Color(0, 0, 1));
-    pixels3.setPixelColor(5, pixels3.Color(0, 0, 5));
+    pixels3.setPixelColor(5, pixels3.Color(0, 0, 1));
     pixels3.setPixelColor(7, pixels3.Color(0, 0, 1));
     pixels3.show();
     delay(DELAYVAL);
@@ -152,72 +152,120 @@ void lights()
 //serial comms in
   if (receivedChar=='a')
   {
-    water=2;
+    water=1;
     food=1;
-    social=2;
+    social=1;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='b')
   {
-    water=2;
-    food=2;
-    social=2;
+    water=0;
+    food=1;
+    social=1;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='c')
   {
     water=2;
-    food=3;
-    social=2;
+    food=1;
+    social=1;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='d')
   {
-    water=2;
-    food=1;
-    social=3;
+    water=1;
+    food=0;
+    social=1;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='e')
   {
-    water=3;
-    food=1;
-    social=2;
+    water=1;
+    food=2;
+    social=1;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='f')
   {
     water=1;
-    food=2;
-    social=3;
+    food=1;
+    social=0;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
 
   if (receivedChar=='g')
   {
-    water=3;
-    food=2;
-    social=1;
+    water=1;
+    food=1;
+    social=2;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
 
   if (receivedChar=='h')
   {
-    water=1;
-    food=3;
-    social=2;
+    water=0;
+    food=0;
+    social=0;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
 
   if (receivedChar=='i')
   {
     water=2;
-    food=3;
+    food=2;
+    social=2;
+    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+  }
+  
+  if (receivedChar=='j')
+  {
+    water=1;
+    food=2;
+    social=0;
+    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+  }
+  
+  if (receivedChar=='k')
+  {
+    water=1;
+    food=0;
+    social=2;
+    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+  }
+  
+  if (receivedChar=='l')
+  {
+    water=2;
+    food=1;
+    social=0;
+    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+  }
+  
+  if (receivedChar=='m')
+  {
+    water=2;
+    food=0;
+    social=1;
+    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+  }
+  
+  if (receivedChar=='n')
+  {
+    water=0;
+    food=1;
+    social=2;
+    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+  }
+  
+  if (receivedChar=='o')
+  {
+    water=0;
+    food=2;
     social=1;
     pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
