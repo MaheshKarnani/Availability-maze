@@ -11,7 +11,7 @@ const int led = 13;//diagnostic led
 void setup() 
 {
     cs_10_11.set_CS_AutocaL_Millis(0xFFFFFFFF);     // turn off autocalibrate on channel 1 - just as an example
-//    Serial.begin(9600);//setup serial
+    Serial.begin(9600);//setup serial
     pinMode(ard_pi_lick, OUTPUT);
     pinMode(led, OUTPUT);
     //collect lick sensor bsl
@@ -23,18 +23,18 @@ void setup()
       cs_thresh =  cs_thresh+cs_10_11.capacitiveSensor(1000);
       var++;
     }
-    cs_thresh=(cs_thresh/5)+200;
+    cs_thresh=(cs_thresh/5)+100;
     delay(1000);
-//    Serial.print("cs_threshold   ");  //show value for trouble shooting if serial monitor is on
-//    Serial.println(cs_thresh); 
+    Serial.print("cs_threshold   ");  //show value for trouble shooting if serial monitor is on
+    Serial.println(cs_thresh); 
 }
 
 void loop() 
 {
     long cs1 = cs_10_11.capacitiveSensor(1000);
     var = 0;
-//    Serial.print("\t");                    // tab character for debug windown spacing
-//    Serial.println(cs1); 
+    Serial.print("\t");                    // tab character for debug windown spacing
+    Serial.println(cs1); 
     
     if (cs1<cs_thresh) //capacitive sensor
     {
