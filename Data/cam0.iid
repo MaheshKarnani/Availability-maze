@@ -1,0 +1,12 @@
+[NIIMAQ_HEADER]
+Type = 3
+Version = 2
+
+[CAMERA_INTERFACE_DATA]
+SerialNumber = 00001E100134A3C6
+BusType = 55534233
+InterfaceName = "cam0"
+Vendor = "FLIR"
+Model = "Blackfly S BFS-U3-16S2M"
+CameraFile = "FLIR Blackfly S BFS-U3-16S2M (#00001E100134A3C6).icd"
+AttributeURL = ""

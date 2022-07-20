@@ -1,0 +1,12 @@
+[NIIMAQ_HEADER]
+Type = 3
+Version = 2
+
+[CAMERA_INTERFACE_DATA]
+SerialNumber = 486E041FF57AB4AA
+BusType = 64736877
+InterfaceName = "cam1"
+Vendor = "MINISCOPE"
+Model = ""
+CameraFile = "MINISCOPE  (#486E041FF57AB4AA).icd"
+AttributeURL = ""

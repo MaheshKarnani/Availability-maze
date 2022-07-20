@@ -1,0 +1,12 @@
+[NIIMAQ_HEADER]
+Type = 3
+Version = 2
+
+[CAMERA_INTERFACE_DATA]
+SerialNumber = 27D50C13873BB191
+BusType = 64736877
+InterfaceName = "cam2"
+Vendor = "Intel(R) RealSense(TM) Depth Camera 435 with RGB Module RGB"
+Model = ""
+CameraFile = "Intel(R) RealSense(TM) Depth Camera 435 with RGB Module RGB  (#27D50C13873BB191).icd"
+AttributeURL = ""
