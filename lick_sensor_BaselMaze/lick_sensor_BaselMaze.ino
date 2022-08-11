@@ -1,12 +1,12 @@
 #include <CapacitiveSensor.h>
-CapacitiveSensor   cs_10_11 = CapacitiveSensor(10,11);       // 10M resistor between pins 6 & 7, pin 7 is sensor pin
+CapacitiveSensor   cs_10_11 = CapacitiveSensor(10,11);       // 10M resistor between pins 10 & 11, pin 11 is sensor pin
 //Capacitive sensor
 int cs_thresh;//look at serial monitor during testing to find a value
 int var;
 int cs1;
 //outputs to Pi
-const int ard_pi_lick = 12;//reports capacitive sensor to Pi
-const int led = 13;//diagnostic led
+const int ard_pi_lick = 2;//output TTL
+const int led = 3;//diagnostic led
 
 void setup() 
 {
@@ -38,12 +38,12 @@ void loop()
     
     if (cs1<cs_thresh) //capacitive sensor
     {
-        digitalWrite(ard_pi_lick, HIGH);
+        digitalWrite(ard_pi_lick, LOW);
         digitalWrite(led, LOW);
     }  
     else
     {
-        digitalWrite(ard_pi_lick, LOW); //on this old arduino low level is -5v and high is 0, so wired ground and pin reverse and coded high/low reverse.
+        digitalWrite(ard_pi_lick, HIGH); //on this old arduino low level is -5v and high is 0, so wired ground and pin reverse and coded high/low reverse.
         digitalWrite(led, HIGH);
     } 
 
