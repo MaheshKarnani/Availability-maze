@@ -1,6 +1,6 @@
 %avmaze2 after list format change to numeric columns
 
-% close all, clear all
+close all, clear all
 
 f1=figure;
 % f2=figure;
@@ -8,12 +8,12 @@ f1=figure;
 % f4=figure;
 % f5=figure;
 
-animal='mouse2';
-dates={'20220807on'};%{'20220617_1';'20220617_2';'20220619';'20220620';'20220621_1';'20220621_2';'20220622';'20220622_2';'20220622_3';'20220705_2'};%
+animal='mouse3';
+dates={'2022081801'};%{'20220617_1';'20220617_2';'20220619';'20220620';'20220621_1';'20220621_2';'20220622';'20220622_2';'20220622_3';'20220705_2'};%
 events=[];
 for file=1:numel(dates)
     date=dates{file, 1};
-    filename=['C:\Data\av_maze\behavior_tracking_JunAug2022\' animal '_' date '.txt'];
+    filename=['C:\Data\av_maze\cohort1\' animal '_' date '.txt'];
     % Import csv
     opts = delimitedTextImportOptions("NumVariables", 9);
     opts.DataLines = [1, Inf];
@@ -207,7 +207,7 @@ S_med=(sum(sm));
 S_high=(sum(sh));
 
 plot([1 2 3],[S_low S_med S_high],'go-')
-legend('food','water','social');
+legend('food','water','social','Location','bestoutside');
 title('consumed/condition');
 ylabel('pels/lickDets/seconds');
 xlabel('availability');
@@ -216,20 +216,40 @@ xticklabels({'low','medium','high'});
 
 f6=figure;hold on;
 F_low=size(find(cond(find(event_type=='DINNER TIME'))==21 | cond(find(event_type=='DINNER TIME'))==12),1);
+F_low_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==21 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==12),1);
 F_med=size(find(cond(find(event_type=='DINNER TIME'))==102 | cond(find(event_type=='DINNER TIME'))==120),1);
+F_med_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==102 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==120),1);
 F_high=size(find(cond(find(event_type=='DINNER TIME'))==201 | cond(find(event_type=='DINNER TIME'))==210),1);
-plot([1 2 3],[F_low F_med F_high],'ko-')
+F_high_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==201 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==210),1);
+subplot(1,2,1),plot([1 2 3],[F_low/F_low_offer F_med/F_med_offer F_high/F_high_offer],'ko-');hold on;
+subplot(1,2,2),plot([1 2 3],[F_low F_med F_high],'ko-');hold on;
 W_low=size(find(cond(find(event_type=='WATER TIME'))==102 | cond(find(event_type=='WATER TIME'))==201),1);
+W_low_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==102 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==201),1);
 W_med=size(find(cond(find(event_type=='WATER TIME'))==12 | cond(find(event_type=='WATER TIME'))==210),1);
+W_med_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==12 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==210),1);
 W_high=size(find(cond(find(event_type=='WATER TIME'))==21 | cond(find(event_type=='WATER TIME'))==120),1);
-plot([1 2 3],[W_low W_med W_high],'bo-')
+W_high_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==21 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==120),1);
+subplot(1,2,1),plot([1 2 3],[W_low/W_low_offer W_med/W_med_offer W_high/W_high_offer],'bo-')
+subplot(1,2,2),plot([1 2 3],[W_low W_med W_high],'bo-')
 S_low=size(find(cond(find(event_type=='SOCIAL TIME'))==120 | cond(find(event_type=='SOCIAL TIME'))==210),1);
+S_low_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==120 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==210),1);
 S_med=size(find(cond(find(event_type=='SOCIAL TIME'))==201 | cond(find(event_type=='SOCIAL TIME'))==21),1);
+S_med_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==201 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==21),1);
 S_high=size(find(cond(find(event_type=='SOCIAL TIME'))==12 | cond(find(event_type=='SOCIAL TIME'))==102),1);
-plot([1 2 3],[S_low S_med S_high],'go-')
-legend('food','water','social');
-title('entries/condition');
-ylabel('entries');
+S_high_offer=size(find(cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==12 | cond(find(event_type=='DINNER TIME' | event_type=='WATER TIME' | event_type=='SOCIAL TIME'))==102),1);
+subplot(1,2,1),plot([1 2 3],[S_low/S_low_offer S_med/S_med_offer S_high/S_high_offer],'go-')
+title('entries/offers');
+ylabel('norm entries');
+xlabel('availability');
+xticks([1 2 3]);
+xticklabels({'low','medium','high'});
+subplot(1,2,2),plot([1 2 3],[S_low S_med S_high],'go-');hold on;
+subplot(1,2,2),plot([1 2 3],[F_low_offer F_med_offer F_high_offer],'ko--');
+subplot(1,2,2),plot([1 2 3],[W_low_offer W_med_offer W_high_offer],'bo--');
+subplot(1,2,2),plot([1 2 3],[S_low_offer S_med_offer S_high_offer],'go--');
+legend('food','water','social','food offers','water offers','social offers','Location','bestoutside');
+title('entries and offers');
+ylabel('entries or offers');
 xlabel('availability');
 xticks([1 2 3]);
 xticklabels({'low','medium','high'});
@@ -249,7 +269,7 @@ S_low=size(find(cond(find(event_type=='SOCIAL TIME'))==120 | cond(find(event_typ
 S_med=size(find(cond(find(event_type=='SOCIAL TIME'))==201 | cond(find(event_type=='SOCIAL TIME'))==21),1);
 S_high=size(find(cond(find(event_type=='SOCIAL TIME'))==12 | cond(find(event_type=='SOCIAL TIME'))==102),1);
 plot([1 2 3],[S_low S_med S_high],'go-')
-legend('food consum entries','water consum entries','social');
+legend('food consum entries','water consum entries','social','Location','bestoutside');
 title('entries/condition');
 ylabel('entries');
 xlabel('availability');
