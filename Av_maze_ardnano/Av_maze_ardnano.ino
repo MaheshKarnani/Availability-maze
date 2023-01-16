@@ -69,13 +69,15 @@ void lights1()
   }
   
 
-  if (water==1)
+  if (water==2)
   {
+    pixels1.clear();
+    pixels1.show();
     pixels1.setPixelColor(4, pixels1.Color(0, 0, 5));
     pixels1.show();
   }
   
-  if (water==2)
+  if (water==1)
   { 
     if (flag_pix1==1)
     {
@@ -118,13 +120,15 @@ void lights2()
   }
   
 
-  if (food==1)
+  if (food==2)
   {
+    pixels2.clear();
+    pixels2.show();
     pixels2.setPixelColor(4, pixels2.Color(0, 0, 5));
     pixels2.show();
   }
   
-  if (food==2)
+  if (food==1)
   { 
     if (flag_pix2==1)
     {
@@ -167,13 +171,15 @@ void lights3()
     pixels3.show();
   }
   
-  if (social==1)
+  if (social==2)
   {
+    pixels3.clear();
+    pixels3.show();
     pixels3.setPixelColor(4, pixels3.Color(0, 0, 5));
     pixels3.show();
   }
   
-  if (social==2)
+  if (social==1)
   { 
     if (flag_pix3==1)
     {
@@ -214,7 +220,7 @@ void lut()
     water=1;
     food=1;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='b')
@@ -222,7 +228,7 @@ void lut()
     water=0;
     food=1;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='c')
@@ -230,7 +236,7 @@ void lut()
     water=2;
     food=1;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='d')
@@ -238,7 +244,7 @@ void lut()
     water=1;
     food=0;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='e')
@@ -246,7 +252,7 @@ void lut()
     water=1;
     food=2;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='f')
@@ -254,7 +260,7 @@ void lut()
     water=1;
     food=1;
     social=0;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
 
   if (receivedChar=='g')
@@ -262,7 +268,7 @@ void lut()
     water=1;
     food=1;
     social=2;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
 
   if (receivedChar=='h')
@@ -270,7 +276,7 @@ void lut()
     water=0;
     food=0;
     social=0;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
 
   if (receivedChar=='i')
@@ -278,7 +284,7 @@ void lut()
     water=2;
     food=2;
     social=2;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='j')
@@ -286,7 +292,7 @@ void lut()
     water=1;
     food=2;
     social=0;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='k')
@@ -294,7 +300,7 @@ void lut()
     water=1;
     food=0;
     social=2;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='l')
@@ -302,7 +308,7 @@ void lut()
     water=2;
     food=1;
     social=0;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='m')
@@ -310,7 +316,7 @@ void lut()
     water=2;
     food=0;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='n')
@@ -318,7 +324,7 @@ void lut()
     water=0;
     food=1;
     social=2;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
   if (receivedChar=='o')
@@ -326,7 +332,7 @@ void lut()
     water=0;
     food=2;
     social=1;
-    pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
+    //pixels1.clear();pixels1.show();pixels2.clear();pixels2.show();pixels3.clear();pixels3.show();
   }
   
 }
